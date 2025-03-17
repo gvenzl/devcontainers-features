@@ -1,0 +1,50 @@
+{
+    "name": "Oracle Database Free",
+    "id": "oracledbfree",
+    "version": "0.0.1",
+    "description": "Oracle Database is the world's leading multi-model, converged database.",
+    "options": {
+        "name": {
+            "type": "string",
+            "default": "oracledb",
+            "description": "Name of the Oracle Database Free container."
+        },
+        "image": {
+            "type": "string",
+            "enum": [
+                "slim",
+                "slim-faststart",
+                "latest",
+                "latest-faststart",
+                "full",
+                "full-faststart"
+            ],
+            "default": "slim",
+            "description": "The image to use."
+        },
+        "port": {
+            "type": "string",
+            "default": "1521",
+            "description": "Choose the port you want to reach the database at."
+        },
+        "oracle_password": {
+            "type": "string",
+            "description": "The Oracle Database password"
+        },
+        "app_user": {
+            "type": "string",
+            "description": "The app user."
+        },
+        "app_user_password": {
+            "type": "string",
+            "description": "The app user password."
+        },
+        "named_volume": {
+            "type": "string",
+            "description": "The named volume that should be used."
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}
